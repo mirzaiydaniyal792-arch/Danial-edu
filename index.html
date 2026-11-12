@@ -1,1 +1,98 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دستیار آموزشی دانیال میرزائی</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Tahoma,Arial,sans-serif;
+ background:#f1f6fc;
+ color:#18324f;
+}
+.wrap{max-width:720px;margin:30px auto;padding:16px}
+header{text-align:center;padding:25px}
+.logo{font-size:48px}
+h1{color:#174a87;font-size:27px}
+header p{line-height:2;color:#60758c}
+.card{
+ background:white;padding:24px;border-radius:20px;
+ box-shadow:0 8px 30px #174a8718;
+}
+h2{color:#174a87}
+label{display:block;margin:18px 0 9px;font-weight:bold}
+select,textarea{
+ width:100%;padding:13px;border:1px solid #ccd9e8;
+ border-radius:12px;font:inherit;
+}
+textarea{min-height:130px}
+.choices{display:flex;gap:10px;flex-wrap:wrap}
+.choice{background:#eaf3ff;padding:12px;border-radius:10px}
+button{
+ width:100%;padding:15px;margin-top:20px;
+ border:0;border-radius:12px;background:#174a87;
+ color:white;font-size:17px;font-weight:bold;
+}
+#answer{
+ display:none;margin-top:18px;padding:15px;
+ background:#eaf3ff;border-radius:12px;line-height:2;
+}
+footer{text-align:center;color:#60758c;padding:20px;font-size:12px}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header>
+<div class="logo">🎓</div>
+<h1>دستیار آموزشی دانیال میرزائی</h1>
+<p>همراه یادگیری دانش‌آموزان پایه‌های هفتم، هشتم و نهم</p>
+</header>
+
+<section class="card">
+<h2>پرسش درسی جدید</h2>
+
+<form id="form">
+<label>پایه تحصیلی</label>
+<div class="choices">
+<label class="choice"><input type="radio" name="grade" value="هفتم"> هفتم</label>
+<label class="choice"><input type="radio" name="grade" value="هشتم"> هشتم</label>
+<label class="choice"><input type="radio" name="grade" value="نهم" checked> نهم</label>
+</div>
+
+<label for="subject">درس</label>
+<select id="subject">
+<option>علوم</option>
+<option>ریاضی</option>
+<option>فارسی</option>
+<option>زبان انگلیسی</option>
+<option>مطالعات اجتماعی</option>
+<option>سایر درس‌ها</option>
+</select>
+
+<label for="question">سؤال خود را بنویس</label>
+<textarea id="question" required placeholder="مثلاً یون‌ها چیست؟"></textarea>
+
+<button type="submit">ارسال پرسش</button>
+<div id="answer"></div>
+</form>
+</section>
+
+<footer>دستیار آموزشی دانیال میرزائی</footer>
+</main>
+
+<script>
+document.getElementById("form").addEventListener("submit",function(e){
+ e.preventDefault();
+ const q=document.getElementById("question").value.trim();
+ const answer=document.getElementById("answer");
+ if(!q)return;
+ answer.style.display="block";
+ answer.textContent="سؤال شما ثبت شد. برای پاسخ‌گویی هوشمند، باید اتصال امن هوش مصنوعی به سایت فعال شود.";
+});
+</script>
+</body>
+</html>
+
